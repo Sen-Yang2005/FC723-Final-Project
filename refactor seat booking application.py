@@ -101,7 +101,7 @@ def Show_booking_state():
         print(" ".join([floor_plan.get(seat, seat) for seat in row]))
         #use a list comprehension to iterate over each seat in the current row and get its booking status or original value.
         # .join() concatenates the retrieved booking statuses or original values of seats into a string with spaces between seats.
-    pprint.pprint(customer_data)
+    pprint.pprint(customer_data) # use pprint module to print put the customer data
 
 # define main function to run the program
 def main():
