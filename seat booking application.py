@@ -37,7 +37,7 @@ def Check_availability_of_seat(seat):
 # define the function to book a seat
 def Book_seat(seat):
     if Check_availability_of_seat(seat): # we should check the availability of the seat so that we can book
-        floor_plan[seat] = "F" # if seat has not been booked, we assign the value F to this seat to indicate the seat has been booked
+        floor_plan[seat] = "R" # if seat has not been booked, we assign the value F to this seat to indicate the seat has been booked
         print(f"{seat} has been booked successfully!")
     else:
         print(f"{seat} has been already booked!")
@@ -83,9 +83,11 @@ def main():
             Show_booking_state()  # show the current booking state
 
         elif choice == "5":  # if the user chooses option 5
-            print("program has quit successfully")  # print a message indicating that the program is exiting
+            print("program has quit successfully!")  # print a message indicating that the program is exiting
             break  # exit the loop and end the program
 
         else:  # if the user enters an invalid choice
             print("invalid choice, please choose valid choice!")  # print a message indicating that the choice is invalid
 
+if __name__ == "__main__":
+    main()
