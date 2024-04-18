@@ -27,6 +27,12 @@ def display_menu():
     print("4. Show booking state")
     print("5. Exit program")
 
+# define the function to check the availability of seat
+def Check_availability_of_seat(seat):
+    if floor_plan.get(seat) == "F": # because floor_plan is a dictionary so we need use get() to get the value of the key
+        return True
+    else:
+        return False
 
 
 
