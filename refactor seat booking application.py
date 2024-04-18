@@ -61,8 +61,8 @@ def Check_availability_of_seat(seat):
 
 # Function to extract seat information
 def extract_seat_info(seat): # to avoid such as 73A being extracted wrongly
-    seat_row = seat[:-1]    # I define a function to make sure whatever the seat number
-    seat_column = seat[-1]  # is 3A or 73A, both can extract their seat row and seat column properly
+    seat_row = seat[-1]    # I define a function to make sure whatever the seat number
+    seat_column = seat[:-1]  # is 3A or 73A, both can extract their seat row and seat column properly
     return seat_row, seat_column
 
 # define the function to book a seat
