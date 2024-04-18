@@ -34,5 +34,17 @@ def Check_availability_of_seat(seat):
     else:
         return False
 
+# define the function to book a seat
+def Book_seat(seat):
+    if Check_availability_of_seat(seat): # we should check the availability of the seat so that we can book
+        floor_plan[seat] = "F" # if seat has not been booked, we assign the value F to this seat to indicate the seat has been booked
+        print(f"{seat} has been booked successfully!")
+    else:
+        print(f"{seat} has been already booked!")
+
+
+
+
+
 
 
