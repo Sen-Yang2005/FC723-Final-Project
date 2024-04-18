@@ -42,7 +42,13 @@ def Book_seat(seat):
     else:
         print(f"{seat} has been already booked!")
 
-
+# define the function free a seat
+def Free_seat(seat):
+    if Check_availability_of_seat(seat)=="R": # check the present seat satus if is booked
+        floor_plan[seat] = "F" # if the seat satus is R then change the value into F
+        print(f"{seat} has been freed successfully!" )
+    else:
+        print(f"{seat} is free now!")
 
 
 
