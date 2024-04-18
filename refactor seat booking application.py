@@ -1,5 +1,6 @@
 import random
 import string
+import pprint
 
 # Define dictionaries to store booking references and customer data
 booking_references = {}
@@ -90,6 +91,7 @@ def Show_booking_state():
         print(" ".join([floor_plan.get(seat, seat) for seat in row]))
         #use a list comprehension to iterate over each seat in the current row and get its booking status or original value.
         # .join() concatenates the retrieved booking statuses or original values of seats into a string with spaces between seats.
+    pprint.pprint(customer_data)
 
 # define main function to run the program
 def main():
@@ -105,8 +107,12 @@ def main():
                 print(f"{seat} is not available!")
 
         elif choice == "2":  # if the user chooses option 2
-            seat = input("please enter the seat you want to book:")  # prompt the user to enter the seat number
-            Book_seat(seat)  # book the seat
+            seat = input("please enter the seat you want to book:")
+            passport_number = input("please enter your passport number:")
+            first_name = input("please enter your first name:")
+            last_name = input("please enter your last name:")
+            # prompt the user to enter the seat number
+            Book_seat(seat, passport_number, first_name, last_name)  # book the seat
 
         elif choice == "3":  # if the user chooses option 3
             seat = input("please enter the seat you want to free:")  # prompt the user to enter the seat number
