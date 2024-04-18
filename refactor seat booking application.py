@@ -75,11 +75,13 @@ def Book_seat(seat, passport_number, first_name, last_name):
 
 # define the function free a seat
 def Free_seat(seat):
-    if Check_availability_of_seat(seat)=="R": # check the present seat status if is booked
-        floor_plan[seat] = "F" # if the seat status is R then change the value into F
-        print(f"{seat} has been freed successfully!" )
+    if floor_plan.get(seat) != "F":  # Check if seat is booked
+        booking_ref = floor_plan.pop(seat)  # Remove booking reference from floor plan
+        del customer_data[booking_ref]  # Remove customer data
+        floor_plan[seat] = "F"  # Mark seat as free
+        print(f"{seat} has been freed successfully!")
     else:
-        print(f"{seat} is free now!")
+        print(f"{seat} is already free!")
 
 # define the function to show the booking state
 def Show_booking_state():
