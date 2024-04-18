@@ -1,6 +1,10 @@
 import random
 import string
 
+# Define dictionaries to store booking references and customer data
+booking_references = {}
+customer_data = {}
+
 # creat an empty dictionary
 floor_plan={}
 
