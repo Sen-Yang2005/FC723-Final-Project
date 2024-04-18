@@ -18,5 +18,15 @@ for row in seat_data:
         if seat != "X" and seat != "S":  # generate key-value pair if it's not X or S
             floor_plan[seat] = "F"  # assign value "F" to each key
 
+# define a function to display the menu
+def display_menu():
+    print("Seating Booking Application Menu")
+    print("1. Check availability of seat")
+    print("2. Book a seat")
+    print("3. Free a seat")
+    print("4. Show booking state")
+    print("5. Exit program")
+
+
 
 
