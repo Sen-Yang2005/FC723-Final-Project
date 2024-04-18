@@ -58,5 +58,34 @@ def Show_booking_state():
         #use a list comprehension to iterate over each seat in the current row and get its booking status or original value.
         # .join() concatenates the retrieved booking statuses or original values of seats into a string with spaces between seats.
 
+# define main function to run the program
+def main():
+    while True:
+        display_menu() # Display the menu options to the user
+        choice = input("please choose the operation you want:") # Prompt the user to enter their choice
 
+        if choice == "1":
+            seat = input("please enter the seat you want to check:") # Prompt the user to enter the seat number
+            if Check_availability_of_seat(seat):  # Check if the seat is available
+                print(f"{seat} is available!")
+            else:
+                print(f"{seat} is not available!")
+
+        elif choice == "2":  # if the user chooses option 2
+            seat = input("please enter the seat you want to book:")  # prompt the user to enter the seat number
+            Book_seat(seat)  # book the seat
+
+        elif choice == "3":  # if the user chooses option 3
+            seat = input("please enter the seat you want to free:")  # prompt the user to enter the seat number
+            Free_seat(seat)  # free the seat
+
+        elif choice == "4":  # if the user chooses option 4
+            Show_booking_state()  # show the current booking state
+
+        elif choice == "5":  # if the user chooses option 5
+            print("program has quit successfully")  # print a message indicating that the program is exiting
+            break  # exit the loop and end the program
+
+        else:  # if the user enters an invalid choice
+            print("invalid choice, please choose valid choice!")  # print a message indicating that the choice is invalid
 
