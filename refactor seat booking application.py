@@ -21,6 +21,13 @@ for row in seat_data:
         if seat != "X" and seat != "S":  # generate key-value pair if it's not X or S
             floor_plan[seat] = "F"  # assign value "F" to each key
 
+def generate_booking_reference(existing_references):
+    # Define a function to generate a random booking reference
+    while True:
+        reference = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)) # generate random alphanumeric characters
+        if reference not in existing_references: # check if the reference is unique
+            return reference
+
 # define a function to display the menu
 def display_menu():
     print("Seating Booking Application Menu")
