@@ -27,6 +27,16 @@ for row in seat_data:
             floor_plan[seat] = "F"  # assign value "F" to each key
 
 def generate_booking_reference(existing_references):
+    """
+        Generate a random booking reference with eight alphanumeric characters.
+        Ensure the reference is unique.
+
+        Parameters:
+        - existing_references: List of existing booking references
+
+        Returns:
+        - Unique booking reference
+    """
     # Define a function to generate a random booking reference
     while True:
         reference = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8)) # generate random alphanumeric characters
@@ -130,3 +140,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
