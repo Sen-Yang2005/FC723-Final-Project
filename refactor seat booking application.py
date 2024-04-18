@@ -48,13 +48,30 @@ def Check_availability_of_seat(seat):
     else:
         return False
 
+# Function to extract seat information
+def extract_seat_info(seat): # to avoid such as 73A being extracted wrongly
+    seat_row = seat[:-1]    # I define a function to make sure whatever the seat number
+    seat_column = seat[-1]  # is 3A or 73A, both can extract their seat row and seat column properly
+    return seat_row, seat_column
+
 # define the function to book a seat
-def Book_seat(seat):
-    if Check_availability_of_seat(seat): # we should check the availability of the seat so that we can book
-        floor_plan[seat] = "R" # if seat has not been booked, we assign the value F to this seat to indicate the seat has been booked
-        print(f"{seat} has been booked successfully!")
+def Book_seat(seat, passport_number, first_name, last_name):
+    if Check_availability_of_seat(seat):  # Check seat availability
+        booking_ref = generate_booking_reference(booking_references.values())  # Generate booking reference
+        booking_references[seat] = booking_ref  # Store booking reference for the seat
+        seat_row, seat_column = extract_seat_info(seat)  # Extract seat row and column
+        customer_data[booking_ref] = {
+            'passport_number': passport_number,
+            'first_name': first_name,
+            'last_name': last_name,
+            'seat_row': seat_row,
+            'seat_column': seat_column
+        }  # Store customer data
+        floor_plan[seat] = booking_ref  # Mark seat as booked
+        print(f"{seat} has been booked successfully! Booking reference: {booking_ref}")
     else:
-        print(f"{seat} has been already booked!")
+        print(f"{seat} has already been booked!")
+
 
 # define the function free a seat
 def Free_seat(seat):
