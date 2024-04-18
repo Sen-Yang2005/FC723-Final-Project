@@ -1,3 +1,6 @@
+import random
+import string
+
 # creat an empty dictionary
 floor_plan={}
 
